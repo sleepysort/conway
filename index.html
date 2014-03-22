@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" />
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<title>Conway's Game of Life</title>
+</head>
+<body>
+<div class="container">
+	<h1>Conway's Game of Life</h1>
+	<br>
+	<div class="well">
+		<canvas id="grid" class="screen-only" width="800" height="300">It looks like canvas is not supported by your browser! Sorry!</canvas>
+		<br>
+		<button id="start" class="screen-only btn">Start</button>
+		<button id="stop" class="screen-only btn" disabled>Stop</button>
+		<button id="step" class="screen-only btn">Step</button>
+		<button id="clear" class="screen-only btn">Clear</button>
+	</div>
+	<br>
+	<div class="col-md-offset-1 col-md-10 col-xs-12">
+		<h3>About</h3>
+		<p>The Game of Life is a 2D cellular automaton created by
+		John Conway in 1970. Although it's referred to as a "game", it
+		is not a game in the traditional sense; there are no players, and
+		the state of the game depends on solely its previous state. Each
+		square in the grid is referred to as a "cell", surrounded by the
+		eight "neighbor" cells adjacent to it. Each cell is either alive 
+		(black) or dead (white). The game follows four basic rules:</p>
+		<em><p>Any alive cell that has fewer than two neighbors will die, as if by underpopulation.</p></em>
+		<em><p>Any alive cell that has two or three neighbors will remain alive.</p></em>
+		<em><p>Any alive cell that has more than three neighbors will die, as if by overpopulation.</p></em>
+		<em><p>Any dead cell that has exactly three neighbors will die, as if by reproduction.</p></em>
+		<p>Despite its simple rules, the game allows for complex behaviors, and
+		the computaional power of a 
+		<a href="http://en.wikipedia.org/wiki/Universal_Turing_machine">Universal Turing Machine</a>. Since its creation, Conway's Game of Life 
+		as become immensely popular with computer scientists and mathematicians.</p>
+	</div>
+	<br>
+	<div class="footer col-xs-12">
+		Shawn Lee &copy; Made with HTML5 Canvas and Javascript
+	</div>
+	<br>
+</div>
+<script type="text/javascript" src="js/conway.js"></script>
+</body>
+</html>
