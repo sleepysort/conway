@@ -30,8 +30,8 @@ function drawGrid(ctx) {
 			} else {
 				ctx.fillStyle = "#eeeeee";
 			}
-			ctx.fillRect(i * _GLOBALS.BOX_SIZE + _GLOBALS.PAD_SIZE, 
-				j * _GLOBALS.BOX_SIZE + _GLOBALS.PAD_SIZE, 
+			ctx.fillRect((i - _GLOBALS.BUFFER) * _GLOBALS.BOX_SIZE + _GLOBALS.PAD_SIZE, 
+				(j - _GLOBALS.BUFFER) * _GLOBALS.BOX_SIZE + _GLOBALS.PAD_SIZE, 
 				_GLOBALS.BOX_SIZE - 2 * _GLOBALS.PAD_SIZE, 
 				_GLOBALS.BOX_SIZE - 2 * _GLOBALS.PAD_SIZE);
 		}
@@ -41,8 +41,8 @@ function drawGrid(ctx) {
 
 // Update the grid on mouse click.
 function updateGrid(click) {
-	var cX = Math.floor(click.x / _GLOBALS.BOX_SIZE);
-	var cY = Math.floor(click.y / _GLOBALS.BOX_SIZE);
+	var cX = Math.floor(click.x / _GLOBALS.BOX_SIZE) + _GLOBALS.BUFFER;
+	var cY = Math.floor(click.y / _GLOBALS.BOX_SIZE) + _GLOBALS.BUFFER;
 	_GLOBALS.GRID[cX][cY] = !_GLOBALS.GRID[cX][cY];
 }
 
@@ -53,9 +53,9 @@ function clearGrid(canvas) {
 	_GLOBALS.GRID_X = maxX;
 	_GLOBALS.GRID_Y = maxY;
 	_GLOBALS.GRID = new Array();
-	for (var i = 0; i < maxX; i++) {
+	for (var i = 0; i < maxX + 2 * _GLOBALS.BUFFER; i++) {
 		_GLOBALS.GRID[i] = new Array();
-		for (var j = 0; j< maxY; j++) {
+		for (var j = 0; j< maxY + 2 * _GLOBALS.BUFFER; j++) {
 			_GLOBALS.GRID[i][j] = false;
 		}
 	}
